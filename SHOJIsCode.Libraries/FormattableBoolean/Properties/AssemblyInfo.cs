@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // アセンブリに関する一般情報は以下の属性セットをとおして制御されます。
 // アセンブリに関連付けられている情報を変更するには、
 // これらの属性値を変更してください。
-[assembly: AssemblyTitle("SHOJI 's Code ライブラリ")]
-[assembly: AssemblyDescription("SHOJI's Code")]
+[assembly: AssemblyTitle("SHOJI's Code ライブラリ 書式化可能Boolean")]
+[assembly: AssemblyDescription("ToStringで様々な書式化が可能なBoolean")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("SHOJI's Code")]
-[assembly: AssemblyProduct("SHOJI 's Code ライブラリ")]
+[assembly: AssemblyCompany("SHOJI's COde")]
+[assembly: AssemblyProduct("SHOJI's Code ライブラリ")]
 [assembly: AssemblyCopyright("Copyright © SHOJI's Code 2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 次の GUID は、このプロジェクトが COM に公開される場合の、typelib の ID です
-[assembly: Guid("8b1eb44e-bb39-4ff7-a41e-c7eae2b0402d")]
+[assembly: Guid("2a95bc08-df64-46e5-ae71-78fac3527e75")]
 
 // アセンブリのバージョン情報は、以下の 4 つの値で構成されています:
 //
