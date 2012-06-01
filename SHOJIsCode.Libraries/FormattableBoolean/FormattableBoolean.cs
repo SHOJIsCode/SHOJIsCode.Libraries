@@ -1,16 +1,26 @@
-ï»¿using System;
+using System;
 using System.Globalization;
 
 namespace SHOJIsCode.Libraries {
     /// <summary>
-    /// æ–‡å­—åˆ—æ›¸å¼åŒ–ãŒå¯èƒ½ãªBooleanå‹
+    /// •¶š—ñ‘®‰»‚ª‰Â”\‚ÈBooleanŒ^
     /// </summary>
     public struct FormattableBoolean : IFormattable {
         bool b;
 
-        #region ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
         /// <summary>
-        /// æ–‡å­—åˆ—æ›¸å¼åŒ–ãŒå¯èƒ½ãªBooleanå‹ã‚’ä½œæˆã—ã€å€¤ã‚’ä¿æŒã—ã¾ã™
+        /// True‚ğ•\‚·FormattableBooleanŒ^
+        /// </summary>
+        public static readonly FormattableBoolean True = new FormattableBoolean(true);
+
+        /// <summary>
+        /// False‚ğ•\‚·FormattableBooleanŒ^
+        /// </summary>
+        public static readonly FormattableBoolean False = new FormattableBoolean(false);
+
+        #region ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+        /// <summary>
+        /// •¶š—ñ‘®‰»‚ª‰Â”\‚ÈBooleanŒ^‚ğì¬‚µA’l‚ğ•Û‚µ‚Ü‚·
         /// </summary>
         /// <param name="value"></param>
         public FormattableBoolean(object value) {
@@ -19,58 +29,80 @@ namespace SHOJIsCode.Libraries {
         #endregion
 
         /// <summary>
-        /// ã“ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ãŒä¿æŒã—ã¦ã„ã‚‹Booleanå‹ã¨ç­‰ã—ã„ã‹ã©ã†ã‹ã‚’å–å¾—ã—ã¾ã™
+        /// ‚±‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ª•Û‚µ‚Ä‚¢‚éBooleanŒ^‚Æ“™‚µ‚¢‚©‚Ç‚¤‚©‚ğæ“¾‚µ‚Ü‚·
         /// </summary>
-        /// <param name="obj">ã“ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã¨æ¯”è¼ƒã™ã‚‹å€¤(FormattableBooleanå‹ã‚‚ã—ãã¯Booleanå‹)</param>
-        /// <returns>ç­‰ã—ã„ã¨ã true</returns>
+        /// <param name="obj">‚±‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚Æ”äŠr‚·‚é’l(FormattableBooleanŒ^‚à‚µ‚­‚ÍBooleanŒ^)</param>
+        /// <returns>“™‚µ‚¢‚Æ‚« true</returns>
         public override bool Equals(object obj) {
             if ( obj is FormattableBoolean ) return b.Equals((bool)obj);
             return b.Equals(obj);
         }
 
         /// <summary>
-        /// ã“ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã®ãƒãƒƒã‚·ãƒ¥ã‚³ãƒ¼ãƒ‰ã‚’è¿”ã—ã¾ã™
+        /// ‚±‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ÌƒnƒbƒVƒ…ƒR[ƒh‚ğ•Ô‚µ‚Ü‚·
         /// </summary>
-        /// <returns>ãƒãƒƒã‚·ãƒ¥ã‚³ãƒ¼ãƒ‰</returns>
+        /// <returns>ƒnƒbƒVƒ…ƒR[ƒh</returns>
         public override int GetHashCode() {
             return b.GetHashCode();
         }
 
         /// <summary>
-        /// ã“ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’è¡¨ã™æ–‡å­—åˆ—ã‚’è¿”ã—ã¾ã™
+        /// ‚±‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ğ•\‚·•¶š—ñ‚ğ•Ô‚µ‚Ü‚·
         /// </summary>
         /// <returns></returns>
         public override string ToString() {
             return b.ToString();
         }
 
-        #region ã‚­ãƒ£ã‚¹ãƒˆ
+        #region ƒLƒƒƒXƒg
         /// <summary>
-        /// FormattableBooleanå‹ã‹ã‚‰Booleanå‹ã¸ã®ã‚­ãƒ£ã‚¹ãƒˆ
+        /// FormattableBooleanŒ^‚©‚çBooleanŒ^‚Ö‚ÌƒLƒƒƒXƒg
         /// </summary>
-        /// <param name="value">FormttableBooleanå‹</param>
-        /// <returns></returns>
+        /// <param name="value">FormttableBooleanŒ^</param>
+        /// <returns>ƒLƒƒƒXƒg‚³‚ê‚½BooleanŒ^</returns>
         public static implicit operator bool(FormattableBoolean value) { return value.b; }
+
+        /// <summary>
+        /// BooleanŒ^‚©‚çFormattableBooleanŒ^‚Ö‚ÌƒLƒƒƒXƒg
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static implicit operator FormattableBoolean(bool value) { return new FormattableBoolean(value); }
         #endregion
 
-        #region æ¼”ç®—å­ã®ã‚ªãƒ¼ãƒãƒ¼ãƒ­ãƒ¼ãƒ‰
+        #region ‰‰Zq‚ÌƒI[ƒo[ƒ[ƒh
+        /// <summary>
+        /// •Û‚µ‚Ä‚¢‚é’l‚ªtrue‚©‚Ç‚¤‚©‚ğæ“¾‚µ‚Ü‚·
+        /// </summary>
+        /// <param name="value">FormatableBoolean</param>
+        /// <returns></returns>
         public static bool operator true(FormattableBoolean value) { return value.b; }
+
+        /// <summary>
+        /// •Û‚µ‚Ä‚¢‚é’l‚ªfalse‚©‚Ç‚¤‚©‚ğæ“¾‚µ‚Ü‚·
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static bool operator false(FormattableBoolean value) { return !value.b; }
 
+        /// <summary>
+        /// •Û‚µ‚Ä‚¢‚é’l‚ğ˜_—”Û’è‚µ‚½
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static FormattableBoolean operator !(FormattableBoolean value) { return new FormattableBoolean(!value.b); }
 
         public static FormattableBoolean operator &(FormattableBoolean value1, bool value2) { return new FormattableBoolean(value1.b && value2); }
         public static FormattableBoolean operator |(FormattableBoolean value1, bool value2) { return new FormattableBoolean(value1.b || value2); }
         #endregion
 
-        #region IFormattableã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ã‚¤ã‚¹
+        #region IFormattableƒCƒ“ƒ^[ƒtƒFƒCƒX
         /// <summary>
-        /// æ›¸å¼ã‚’æŒ‡å®šã—ã¦ã“ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’æ–‡å­—åˆ—åŒ–ã—ã¾ã™
+        /// ‘®‚ğw’è‚µ‚Ä‚±‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ğ•¶š—ñ‰»‚µ‚Ü‚·
         /// </summary>
-        /// <param name="format">æ›¸å¼æ–‡å­—åˆ—</param>
-        /// <param name="formatProvider">ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆãƒ—ãƒ­ãƒã‚¤ãƒ€</param>
-        /// <returns>æ›¸å¼åŒ–ã•ã‚ŒãŸæ–‡å­—åˆ—</returns>
+        /// <param name="format">‘®•¶š—ñ</param>
+        /// <param name="formatProvider">ƒtƒH[ƒ}ƒbƒgƒvƒƒoƒCƒ_</param>
+        /// <returns>‘®‰»‚³‚ê‚½•¶š—ñ</returns>
         public string ToString(string format, IFormatProvider formatProvider) {
             if ( format == null || format == string.Empty ) return b.ToString();
 
@@ -93,3 +125,4 @@ namespace SHOJIsCode.Libraries {
         #endregion
     }
 }
+
